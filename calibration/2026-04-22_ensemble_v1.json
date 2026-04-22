@@ -1,0 +1,52 @@
+{
+  "spec_version": "ambient_calibration_v1",
+  "date_utc": "2026-04-22T14:18:02Z",
+  "substrate": "secrets.token_bytes (paired null)",
+  "n_windows": 4320,
+  "bytes_per_window": 500000,
+  "elapsed_seconds": 57.528565883636475,
+  "ledger_threshold": 0.01,
+  "ping_threshold": 0.001,
+  "per_detector": {
+    "runs": {
+      "n": 4320,
+      "mean": 0.5036012132427797,
+      "min": 0.00017266345361566238,
+      "frac_below_0.01": 0.007638888888888889,
+      "frac_below_0.001": 0.000925925925925926,
+      "ks_stat": 0.011836339911874383,
+      "ks_pvalue": 0.5761963235853524
+    },
+    "chi2": {
+      "n": 4320,
+      "mean": 0.4990805122048218,
+      "min": 0.00013600079161046885,
+      "frac_below_0.01": 0.010185185185185186,
+      "frac_below_0.001": 0.001388888888888889,
+      "ks_stat": 0.012115353374541976,
+      "ks_pvalue": 0.5460578156321014
+    },
+    "block": {
+      "n": 4320,
+      "mean": 0.5033924126086996,
+      "min": 4.499050714068531e-05,
+      "frac_below_0.01": 0.00949074074074074,
+      "frac_below_0.001": 0.000462962962962963,
+      "ks_stat": 0.011198370919040745,
+      "ks_pvalue": 0.6464644130841796
+    }
+  },
+  "combined": {
+    "n": 4320,
+    "mean": 0.5024087043734803,
+    "min": 4.185093514497756e-05,
+    "frac_below_0.01": 0.009259259259259259,
+    "frac_below_0.001": 0.001851851851851852,
+    "ks_stat": 0.013685767866061682,
+    "ks_pvalue": 0.38991083814824756
+  },
+  "pass_ks": true,
+  "pass_ledger": true,
+  "pass_ping": true,
+  "overall_pass": true
+}
