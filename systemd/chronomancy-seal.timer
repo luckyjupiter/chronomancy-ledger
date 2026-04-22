@@ -1,0 +1,14 @@
+[Unit]
+Description=Chronomancy Ledger — daily Merkle seal timer (UTC 00:15)
+Documentation=https://github.com/luckyjupiter/chronomancy-ledger
+
+[Timer]
+# Fire at 00:15 UTC every day, sealing the day that just closed.
+OnCalendar=*-*-* 00:15:00 UTC
+# If the laptop was asleep at the scheduled time, fire on next boot so no
+# day goes unsealed.
+Persistent=true
+Unit=chronomancy-seal.service
+
+[Install]
+WantedBy=timers.target

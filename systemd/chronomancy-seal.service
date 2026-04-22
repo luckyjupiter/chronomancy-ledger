@@ -1,0 +1,18 @@
+[Unit]
+Description=Chronomancy Ledger — daily Merkle seal
+Documentation=https://github.com/luckyjupiter/chronomancy-ledger
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/chronomancy-ledger
+ExecStart=/usr/bin/python3 %h/chronomancy-ledger/tools/seal_day.py
+# Push the commit created by seal_day.py. Credentials come from the user's
+# git config (the laptop already has push access to luckyjupiter/chronomancy-ledger).
+ExecStartPost=/usr/bin/git -C %h/chronomancy-ledger push origin HEAD
+# If the push fails we still want the local seal to stick — log and move on
+# rather than marking the whole unit failed.
+SuccessExitStatus=0 1
+StandardOutput=journal
+StandardError=journal
