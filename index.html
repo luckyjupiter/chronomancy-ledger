@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>chronomancy-ledger · Ambient Chronomancy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box }
+  html, body {
+    margin: 0; padding: 0;
+    background: #05070e; color: #c0c8d0;
+    font-family: -apple-system, "SF Mono", Menlo, ui-monospace, monospace;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px }
+  h1 {
+    font-size: 18px; font-weight: 400; letter-spacing: 5px;
+    margin: 0 0 6px; color: #8fb8e8; text-transform: uppercase;
+  }
+  .sub { font-size: 12px; color: #556; margin-bottom: 36px; letter-spacing: 1px }
+  h2 {
+    font-size: 12px; letter-spacing: 3px; color: #8fb8e8;
+    text-transform: uppercase; border-top: 1px solid #141c2c;
+    padding-top: 20px; margin-top: 32px;
+  }
+  p { color: #8a98aa; font-size: 13px }
+  a { color: #8fb8e8; text-decoration: none; border-bottom: 1px dotted #2a4a6a }
+  a:hover { color: #c0dfff; border-bottom-color: #8fb8e8 }
+  .nav { display: flex; gap: 4px; margin: 24px 0 }
+  .nav a {
+    background: #0e1220; border: 1px solid #1a2030; padding: 12px 16px;
+    color: #8fb8e8; font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; border-bottom: 1px solid #1a2030;
+  }
+  .nav a:hover { background: #1a2a44; border-color: #2a4a6a }
+  .callout {
+    background: #0a0d18; border-left: 2px solid #2a4a6a;
+    padding: 12px 16px; margin: 16px 0; font-size: 12px; color: #a8b0c0;
+  }
+  ul { padding-left: 20px }
+  li { margin: 6px 0; font-size: 13px; color: #8a98aa }
+  code {
+    background: #0a0d18; padding: 1px 6px; border-radius: 2px;
+    font-size: 12px; color: #c0dfff;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>chronomancy-ledger</h1>
+  <div class="sub">ambient chronomancy · public epistemic infrastructure</div>
+
+  <div class="nav">
+    <a href="./live.html">LIVE STREAM</a>
+    <a href="./aggregate.html">AGGREGATE</a>
+    <a href="https://github.com/luckyjupiter/chronomancy-ledger">SOURCE</a>
+  </div>
+
+  <p>
+    An architecture for continuous coupling detection, running as a new
+    mode inside the Chronomancy platform. A server-side 1&nbsp;MHz
+    quantum random number generator streams bits continuously. A
+    three-detector ensemble (runs test · χ² byte-frequency · block-
+    frequency · Fisher combine) watches it. When the stream does
+    something statistically unusual, the user gets a ping.
+  </p>
+
+  <p>
+    This repo is the epistemic infrastructure. It holds the
+    architecture, the pre-registrations, the calibration certificates,
+    and the daily Merkle-sealed event log. The git log is the chain.
+  </p>
+
+  <h2>What lives here</h2>
+  <ul>
+    <li><a href="docs/AMBIENT.md">AMBIENT.md</a> — six-layer architecture</li>
+    <li><a href="docs/AMBIENT_GAMIFICATION.md">AMBIENT_GAMIFICATION.md</a> — NT-compatible scoring design</li>
+    <li><a href="docs/MPI_PRIMER.md">MPI_PRIMER.md</a> — verbatim Lucadou/Römer/Walach quotes</li>
+    <li><a href="calibration/">calibration/</a> — signed certs proving the instrument matches nominal FPR against a known null</li>
+    <li><a href="preregistrations/">preregistrations/</a> — locked hypotheses, committed before the data windows they cover</li>
+    <li><a href="references/">references/</a> — primary-source PDFs (Lucadou et al.)</li>
+    <li><code>daily/</code> — Merkle-sealed event log (opens at first dispatched ping)</li>
+  </ul>
+
+  <h2>Two things this page is not</h2>
+  <div class="callout">
+    <strong>Not an oracle.</strong> The live page shows the substrate — random
+    bits flowing — but it does not analyze <em>your</em> stream. Per-user
+    live p-values would create the feedback loop the NT axiom of
+    Generalized Quantum Theory explicitly forbids. See
+    <a href="docs/AMBIENT_GAMIFICATION.md">AMBIENT_GAMIFICATION.md</a>.
+  </div>
+  <div class="callout">
+    <strong>Not a leaderboard.</strong> No ranking of users by anomaly
+    rate. Witnessing metrics only. The phenomenon we're measuring would
+    dissolve under the ranking.
+  </div>
+
+  <h2>Current status</h2>
+  <ul>
+    <li>Layer 1 substrate: <code>QWR4U009</code> (MED1MQ16 1Mbps), claimed and streaming</li>
+    <li>Layer 2 detector ensemble: live, calibrated (K-S p = 0.39 vs Uniform[0,1])</li>
+    <li>Layer 6 ledger: schema + Merkle-seal pattern committed; daily/ opens on first dispatched ping</li>
+    <li>Dispatcher + bot UI: not yet live — pings have not yet been sent to any user</li>
+  </ul>
+</div>
+</body>
+</html>
