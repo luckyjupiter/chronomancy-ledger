@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "date": "2026-04-22",
+      "file": "daily/2026-04-22.jsonl",
+      "event_count": 6,
+      "seal_sha256": "3500175daa2fdd91f140dca9a3d4650d77c2861e4a0f77c03ed6c660728c4f29"
+    }
+  ],
+  "last_seal_sha256": "3500175daa2fdd91f140dca9a3d4650d77c2861e4a0f77c03ed6c660728c4f29"
+}
