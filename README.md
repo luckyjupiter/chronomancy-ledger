@@ -4,12 +4,22 @@ Public ledger for **Ambient Chronomancy** — an architecture for continuous cou
 
 This repository is the epistemic infrastructure. It holds:
 
-- **Architecture & design docs** — [`docs/AMBIENT.md`](docs/AMBIENT.md), [`docs/AMBIENT_GAMIFICATION.md`](docs/AMBIENT_GAMIFICATION.md), [`docs/MPI_PRIMER.md`](docs/MPI_PRIMER.md)
+- **Architecture & design docs** — [`docs/VISION.md`](docs/VISION.md), [`docs/AMBIENT.md`](docs/AMBIENT.md), [`docs/AMBIENT_GAMIFICATION.md`](docs/AMBIENT_GAMIFICATION.md), [`docs/MPI_PRIMER.md`](docs/MPI_PRIMER.md)
+- **Challenge protocol** — [`docs/CHALLENGE_PROTOCOL.md`](docs/CHALLENGE_PROTOCOL.md), the tamper-evident QRNG trial and bounty rulebook for active Psi Games; [`docs/CHALLENGE_V0_BINARY.md`](docs/CHALLENGE_V0_BINARY.md) freezes the first implementable binary task; [`docs/CHALLENGE_IMPLEMENTATION_MAP.md`](docs/CHALLENGE_IMPLEMENTATION_MAP.md) maps it onto the backend; [`docs/CHALLENGE_V0_BINARY_PREREG_TEMPLATE.md`](docs/CHALLENGE_V0_BINARY_PREREG_TEMPLATE.md) is the freeze template
 - **Pre-registrations** — hypotheses locked in *before* the data window they cover, one file per preregistration, committed to git and timestamped by GitHub
 - **Daily Merkle-sealed event log** — `daily/YYYY-MM-DD.jsonl` + `LEDGER_INDEX.json`, committed by a cron after each UTC day closes
 - **Primary sources** — [`references/`](references/), the papers the architecture cites
 
 The git log is the Merkle chain. Every commit records when something was said, and the content-addressing makes post-hoc rewriting detectable.
+
+## Vision
+
+Chronomancy is a public proof system for extraordinary human
+performance: a consumer-scale, cryptographically auditable laboratory
+for testing whether human attention, timing, intention, and symbolic
+context can show measurable structure against quantum randomness.
+
+The longer thesis lives in [`docs/VISION.md`](docs/VISION.md).
 
 ## What Ambient Chronomancy is
 
@@ -20,6 +30,26 @@ A second mode inside Chronomancy, next to the existing standard mode (π-seeded 
 The user responds with the existing Chronomancy primitives — UP / DOWN / tags — or ignores the ping. Response rate is itself data.
 
 See [`docs/AMBIENT.md`](docs/AMBIENT.md) for the six-layer architecture.
+
+## What Chronomancy Challenge is
+
+Chronomancy Challenge is the active-trial counterpart to Ambient
+Chronomancy. Users run pre-committed QRNG prediction, influence, timing,
+or witnessing experiments; each scored trial is hashed into a Merkle
+tree; and a public bounty protocol defines what would count as
+extraordinary performance.
+
+The boundary is deliberate: ambient mode rewards witnessing and supports
+aggregate science, while active Psi Games may support per-user scoring
+because the target statistic is explicit and pre-registered. See
+[`docs/CHALLENGE_PROTOCOL.md`](docs/CHALLENGE_PROTOCOL.md) and the first
+implementation target,
+[`docs/CHALLENGE_V0_BINARY.md`](docs/CHALLENGE_V0_BINARY.md). The backend
+mapping lives in
+[`docs/CHALLENGE_IMPLEMENTATION_MAP.md`](docs/CHALLENGE_IMPLEMENTATION_MAP.md).
+The first pre-registration should be cut from
+[`docs/CHALLENGE_V0_BINARY_PREREG_TEMPLATE.md`](docs/CHALLENGE_V0_BINARY_PREREG_TEMPLATE.md)
+only when the protocol is ready to freeze.
 
 ## What's different from most psi instruments
 
@@ -45,8 +75,15 @@ The two loud commitments in the design are load-bearing:
 
 ```
   docs/
+    VISION.md                   moonshot thesis and product framing
     AMBIENT.md                 architecture
     AMBIENT_GAMIFICATION.md    scoring / gamification design, NT-compatible
+    CHALLENGE_PROTOCOL.md      active QRNG trial + bounty protocol
+    CHALLENGE_V0_BINARY.md     first active binary task specification
+    CHALLENGE_IMPLEMENTATION_MAP.md
+                                backend migration and route map
+    CHALLENGE_V0_BINARY_PREREG_TEMPLATE.md
+                                active-track pre-registration template
     MPI_PRIMER.md              theory primer with verbatim source quotes
   
   preregistrations/            pre-registered hypotheses, one per file
