@@ -293,7 +293,13 @@
       "file": "daily/2026-06-13.jsonl",
       "event_count": 0,
       "seal_sha256": "26252ae45e55faf3b213a436cfb3c1771e9d064416ce978a566f7edb1fc028f3"
+    },
+    {
+      "date": "2026-06-14",
+      "file": "daily/2026-06-14.jsonl",
+      "event_count": 0,
+      "seal_sha256": "d087ae04094bfcefdacbe011f29dc8f28a5d6b515e38eaacd0a6e92369fff31a"
     }
   ],
-  "last_seal_sha256": "26252ae45e55faf3b213a436cfb3c1771e9d064416ce978a566f7edb1fc028f3"
+  "last_seal_sha256": "d087ae04094bfcefdacbe011f29dc8f28a5d6b515e38eaacd0a6e92369fff31a"
 }
